@@ -1,17 +1,49 @@
 # World Map LOD
-My implementation of a **Level of Detail (LOD)** system that **dynamically** manages how detailed the terrain should be based on the distance to the camera to **_safe resources_** and **_increase performance_**.
+A C++ and OpenGL implementation of a Level of Detail (LOD) system for rendering a global terrain map. It dynamically adjusts terrain detail based on camera distance to optimize performance and conserve system resources.
 
-## Implementation details
-* Based on a dynamically managed **[Quadtree](https://en.wikipedia.org/wiki/Quadtree)**, meaning the **user can adjust at which distance** the quadtree should be split.
-* I used: **C++** and **OpenGL**.
-* The leafs **vertices and indices** are saved in **RAM** to check **whether they changed** to avoid sending data too often to the **GPU**, **further increasing performance**.
-* For the sake of visualisation:
-   * I coded a **quick and cheap water** shader.
-   * the terrain's scale is **2:1**, because:
-   * Earth's **heightmap** and **colormap** are used.
-* The **_biggest struggle_** definitely was how I'd fix the cracks created by two neighbouring terrain faces having a different level of detail.
-  * I Fixed that issue by using a **[Bitmask](https://en.wikipedia.org/wiki/Mask_(computing))** to **efficiently** find neighbouring terrain faces and compare their LOD, then adjusting the proper edge vertices of the higher LOD face.
+---
 
-## Try it out yourself
-* Just downlaod the ZIP under "Releases"
-* Unzip the archive and run the .exe
+## Overview
+This project uses a dynamic quadtree to manage terrain detail levels in real-time, improving rendering efficiency and visual fidelity. Special attention is given to preventing common LOD issues like terrain cracks.
+
+---
+
+## Key Features
+* Dynamic quadtree-based LOD
+* Adjustable split distance for LOD refinement
+* Crack-free terrain transitions
+* Neighbors compared using a bitmask system for consistent edge resolution
+* Real-world data integration (Uses Earth's actual heightmap and colormap)
+* Simple visualization shaders:
+  * Includes a basic water shader for aesthetic enhancement
+    
+---
+
+## Getting Started
+1. Download the latest ZIP from the [Releases](https://github.com/TizianGth/WorldMapLOD/releases) section
+2. Unzip the archive
+3. Run the executable (.exe)
+
+No additional setup is required.
+
+---
+
+## Technical Stack
+* Language: C++
+* Graphics API: OpenGL
+
+---
+
+## Known Challenges & Solutions
+* Terrain Cracks at LOD Boundaries
+* Fixed by:
+
+  * Calculating neighbors using a bitmask
+
+  * Adjusting the edge vertices of the higher LOD face to match the lower one
+
+---
+  
+
+
+ 
