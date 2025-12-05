@@ -28,9 +28,9 @@ No additional setup is required.
 
 ---
 
-## Technical Stack
-* Language: C++
-* Graphics API: OpenGL
+## Tech Stack
+* C++
+* OpenGL
 
 ---
 
@@ -43,7 +43,11 @@ No additional setup is required.
   * Adjusting the edge vertices of the higher LOD face to match the lower one
 
 ---
-  
+
+## Demo
+![Clip1](https://github.com/TizianGth/readmeResources/blob/main/WorldMapLOD/Clip1.webp?raw=true)
+![Clip2](https://github.com/TizianGth/readmeResources/blob/main/WorldMapLOD/Clip2.webp?raw=true)
+![Clip3](https://github.com/TizianGth/readmeResources/blob/main/WorldMapLOD/Clip3.webp?raw=true)
 
 
  
